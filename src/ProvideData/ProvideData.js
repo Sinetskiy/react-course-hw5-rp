@@ -18,4 +18,26 @@ import {getLoggedInUser} from '../utils'
   const user = getLoggedInUser()
 */
 
-export const WithLoggedInUser = () => {}
+// !!! вот это почему то не работает
+// !!! и в тестах не верных класс импортировался
+
+// export const WithLoggedInUser = () => {
+//     return class extends Component {
+//
+//         render() {
+//             const {children} = this.props;
+//             const user = getLoggedInUser();
+//             return children(user);
+//         }
+//     };
+// };
+
+export class WithLoggedInUser extends Component {
+
+    render() {
+        const {children} = this.props;
+        const user = getLoggedInUser();
+        return children(user);
+    }
+
+}

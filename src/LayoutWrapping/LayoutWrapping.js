@@ -11,4 +11,12 @@ import React, { Component } from 'react';
   При этом Render-prop - это более простой паттерн.
 */
 
-export const WrapWithAbsolutePosition = () => {}
+export class WrapWithAbsolutePosition extends Component {
+
+    render() {
+        const {children} = this.props;
+        const divStyle = {position: "absolute"};
+        return <div style={divStyle}>{children}</div>;
+    }
+
+}
